@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDeleteForever } from "react-icons/md";
 import { removeUser } from "../store/slices/UserSlice";
 import { useDispatch } from "react-redux";
 const DisplayUsers = () => {
@@ -20,12 +20,13 @@ const DisplayUsers = () => {
           return (
             <li key={id}>
               <span>{user}</span>
-              <span>
-                <MdDeleteOutline
-                  onClick={() => {
-                    deleteUser(user);
-                  }}
-                />
+              <span
+                className="btn-delete"
+                onClick={() => {
+                  deleteUser({'user' : user,'id':id});
+                }}
+              >
+                <MdDeleteForever className="delete-icon" />
               </span>
             </li>
           );

@@ -10,8 +10,10 @@ const userSlice = createSlice({
       state.push(action.payload);
     },
     removeUser(state, action) {
-      console.log('action: ', action);
-      return state.filter((user) => user !== action.payload);
+      console.log("action: ", action.payload?.user);
+    
+      return state.filter((user) => user !== action.payload.user);
+      //  state.splice(action.payload.id, 1)
     },
     deleteUsers(state) {
       return [];
