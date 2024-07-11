@@ -11,13 +11,18 @@ const userSlice = createSlice({
     },
     removeUser(state, action) {
       console.log("action: ", action.payload?.user);
-    
+
       return state.filter((user) => user !== action.payload.user);
       //  state.splice(action.payload.id, 1)
     },
     deleteUsers(state) {
       return [];
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(userSlice.actions.deleteUsers, () => {
+      return [];
+    });
   },
 });
 
