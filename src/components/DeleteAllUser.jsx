@@ -15,7 +15,7 @@ const DeleteAllUser = () => {
           deleteUsers(deleteUsersData());
         }}
       >
-       Delete All User
+       Clear User
       </button>
     </Wrapper>
   );
